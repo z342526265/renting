@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_id: 1
+  chuzu_fangshi: 1
+  biaoti: MyString
+  dizhi: MyString
+  xiaoqu: MyString
+  woshi: 1
+  keting: 1
+  chufang: 1
+  weishengjian: 1
+  leixing: 1
+  zhuangxiu: 1
+  louceng: 1
+  zongcengshu: 1
+  chaoxiang: 1
+  mianji: 1
+  zujin: 1
+  fu_zujin_fangshi: 1
+  fangwu_peizhi: MyString
+  miaoshu: MyText
+  image_url: MyString
+  lianxi_dianhu: MyString
+  lianxi_ren: MyString
+  shuaxin_cishu: 1
+  shifou_zhiding: false
+  shifou_dingxiang: false
+  shifou_tuiguang: false
+
+two:
+  user_id: 1
+  chuzu_fangshi: 1
+  biaoti: MyString
+  dizhi: MyString
+  xiaoqu: MyString
+  woshi: 1
+  keting: 1
+  chufang: 1
+  weishengjian: 1
+  leixing: 1
+  zhuangxiu: 1
+  louceng: 1
+  zongcengshu: 1
+  chaoxiang: 1
+  mianji: 1
+  zujin: 1
+  fu_zujin_fangshi: 1
+  fangwu_peizhi: MyString
+  miaoshu: MyText
+  image_url: MyString
+  lianxi_dianhu: MyString
+  lianxi_ren: MyString
+  shuaxin_cishu: 1
+  shifou_zhiding: false
+  shifou_dingxiang: false
+  shifou_tuiguang: false

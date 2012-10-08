@@ -1,4 +1,6 @@
 Renting::Application.routes.draw do
+  resources :houses
+
   devise_for :users
 
   get "welcome/index"

@@ -1,0 +1,121 @@
+<%= form_for(@house) do |f| %>
+  <% if @house.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@house.errors.count, "error") %> prohibited this house from being saved:</h2>
+
+      <ul>
+      <% @house.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :chuzu_fangshi %><br />
+    <%= f.number_field :chuzu_fangshi %>
+  </div>
+  <div class="field">
+    <%= f.label :biaoti %><br />
+    <%= f.text_field :biaoti %>
+  </div>
+  <div class="field">
+    <%= f.label :dizhi %><br />
+    <%= f.text_field :dizhi %>
+  </div>
+  <div class="field">
+    <%= f.label :xiaoqu %><br />
+    <%= f.text_field :xiaoqu %>
+  </div>
+  <div class="field">
+    <%= f.label :woshi %><br />
+    <%= f.number_field :woshi %>
+  </div>
+  <div class="field">
+    <%= f.label :keting %><br />
+    <%= f.number_field :keting %>
+  </div>
+  <div class="field">
+    <%= f.label :chufang %><br />
+    <%= f.number_field :chufang %>
+  </div>
+  <div class="field">
+    <%= f.label :weishengjian %><br />
+    <%= f.number_field :weishengjian %>
+  </div>
+  <div class="field">
+    <%= f.label :leixing %><br />
+    <%= f.number_field :leixing %>
+  </div>
+  <div class="field">
+    <%= f.label :zhuangxiu %><br />
+    <%= f.number_field :zhuangxiu %>
+  </div>
+  <div class="field">
+    <%= f.label :louceng %><br />
+    <%= f.number_field :louceng %>
+  </div>
+  <div class="field">
+    <%= f.label :zongcengshu %><br />
+    <%= f.number_field :zongcengshu %>
+  </div>
+  <div class="field">
+    <%= f.label :chaoxiang %><br />
+    <%= f.number_field :chaoxiang %>
+  </div>
+  <div class="field">
+    <%= f.label :mianji %><br />
+    <%= f.number_field :mianji %>
+  </div>
+  <div class="field">
+    <%= f.label :zujin %><br />
+    <%= f.number_field :zujin %>
+  </div>
+  <div class="field">
+    <%= f.label :fu_zujin_fangshi %><br />
+    <%= f.number_field :fu_zujin_fangshi %>
+  </div>
+  <div class="field">
+    <%= f.label :fangwu_peizhi %><br />
+    <%= f.text_field :fangwu_peizhi %>
+  </div>
+  <div class="field">
+    <%= f.label :miaoshu %><br />
+    <%= f.text_area :miaoshu %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br />
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="field">
+    <%= f.label :lianxi_dianhu %><br />
+    <%= f.text_field :lianxi_dianhu %>
+  </div>
+  <div class="field">
+    <%= f.label :lianxi_ren %><br />
+    <%= f.text_field :lianxi_ren %>
+  </div>
+  <div class="field">
+    <%= f.label :shuaxin_cishu %><br />
+    <%= f.number_field :shuaxin_cishu %>
+  </div>
+  <div class="field">
+    <%= f.label :shifou_zhiding %><br />
+    <%= f.check_box :shifou_zhiding %>
+  </div>
+  <div class="field">
+    <%= f.label :shifou_dingxiang %><br />
+    <%= f.check_box :shifou_dingxiang %>
+  </div>
+  <div class="field">
+    <%= f.label :shifou_tuiguang %><br />
+    <%= f.check_box :shifou_tuiguang %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
