@@ -1,19 +1,34 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>南阳租房发布</title>
-	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-	 <p class="notice"><%= notice %></p>
-	 <p class="alert"><%= alert %></p>
-
-
-<%= yield %>
-
+  <head>
+    <title>南阳租房发布</title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="Keywords" content="南阳租房" />
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="container">
+      <div id="header">
+        头部
+        <%= image_tag("rails.png") %>
+      </div>
+      <div id="menu">
+        <%= link_to "首页",root_path %>
+        <%= link_to "租房信息",houses_path %>
+        <%= link_to "租客与房东" %>
+      </div>
+      <div id="flash">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+      </div>
+      <div id="main_content">
+        <%= yield %>
+      </div>
+      <div id="footer">
+        我是底部
+      </div>
+    </div>
 </body>
 </html>

@@ -11,3 +11,39 @@
  *= require_self
  *= require_tree .
  */
+body {
+  font-family:Verdana;
+  font-size:14px;
+  margin:0;
+}
+
+#container{
+  margin:0 auto;
+  width:100%;
+}
+
+#header {
+  height:65px;
+  background:#9c6;
+  margin-bottom:5px;
+}
+
+#menu {
+  height:30px;
+  background:#693;
+  margin-bottom:5px;
+}
+
+#main_content {
+  height:1000px;
+  background:#ffa;
+  margin-bottom:5px;
+}
+
+#footer {
+  height:60px;
+  background:#9c6;
+}
+
+
+

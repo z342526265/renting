@@ -12,110 +12,111 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br />
+    <%= f.label :user_id,'用户' %>
     <%= f.number_field :user_id %>
   </div>
   <div class="field">
-    <%= f.label :chuzu_fangshi %><br />
-    <%= f.number_field :chuzu_fangshi %>
+    <%= f.label :chuzu_fangshi,'出租方式' %>
+    <%= f.radio_button :chuzu_fangshi,1 %>
+    <%= f.radio_button :chuzu_fangshi,2 %>
   </div>
   <div class="field">
-    <%= f.label :biaoti %><br />
+    <%= f.label :biaoti,'标题' %>
     <%= f.text_field :biaoti %>
   </div>
   <div class="field">
-    <%= f.label :dizhi %><br />
+    <%= f.label :dizhi,'地址' %>
     <%= f.text_field :dizhi %>
   </div>
   <div class="field">
-    <%= f.label :xiaoqu %><br />
+    <%= f.label :xiaoqu,'小区' %>
     <%= f.text_field :xiaoqu %>
   </div>
   <div class="field">
-    <%= f.label :woshi %><br />
+    <%= f.label :woshi,'室' %>
     <%= f.number_field :woshi %>
   </div>
   <div class="field">
-    <%= f.label :keting %><br />
+    <%= f.label :keting %>
     <%= f.number_field :keting %>
   </div>
   <div class="field">
-    <%= f.label :chufang %><br />
+    <%= f.label :chufang %>
     <%= f.number_field :chufang %>
   </div>
   <div class="field">
-    <%= f.label :weishengjian %><br />
+    <%= f.label :weishengjian %>
     <%= f.number_field :weishengjian %>
   </div>
   <div class="field">
-    <%= f.label :leixing %><br />
-    <%= f.number_field :leixing %>
+    <%= f.label :leixing %>
+    <%= f.select :leixing,House::LEIXING %>
   </div>
   <div class="field">
-    <%= f.label :zhuangxiu %><br />
-    <%= f.number_field :zhuangxiu %>
+    <%= f.label :zhuangxiu %>
+    <%= f.select :zhuangxiu,House::ZHUANGXIU %>
   </div>
   <div class="field">
-    <%= f.label :louceng %><br />
+    <%= f.label :louceng %>
     <%= f.number_field :louceng %>
   </div>
   <div class="field">
-    <%= f.label :zongcengshu %><br />
+    <%= f.label :zongcengshu %>
     <%= f.number_field :zongcengshu %>
   </div>
   <div class="field">
-    <%= f.label :chaoxiang %><br />
-    <%= f.number_field :chaoxiang %>
+    <%= f.label :chaoxiang %>
+    <%= f.select :chaoxiang,House::CHAOXIANG %>
   </div>
   <div class="field">
-    <%= f.label :mianji %><br />
+    <%= f.label :mianji %>
     <%= f.number_field :mianji %>
   </div>
   <div class="field">
-    <%= f.label :zujin %><br />
+    <%= f.label :zujin,'租金' %>
     <%= f.number_field :zujin %>
   </div>
   <div class="field">
-    <%= f.label :fu_zujin_fangshi %><br />
-    <%= f.number_field :fu_zujin_fangshi %>
+    <%= f.label :fu_zujin_fangshi,'付租金方式' %>
+    <%= f.select :fu_zujin_fangshi,House::FU_ZUJIN_FANGSHI %>
   </div>
   <div class="field">
-    <%= f.label :fangwu_peizhi %><br />
+    <%= f.label :fangwu_peizhi,'房屋配置' %>
     <%= f.text_field :fangwu_peizhi %>
   </div>
   <div class="field">
-    <%= f.label :miaoshu %><br />
-    <%= f.text_area :miaoshu %>
+    <%= f.label :miaoshu,'其他描述' %>
+    <%= f.text_area :miaoshu,:cols=>30,:rows=>2 %>
   </div>
   <div class="field">
-    <%= f.label :image_url %><br />
+    <%= f.label :image_url %>
     <%= f.text_field :image_url %>
   </div>
   <div class="field">
-    <%= f.label :lianxi_dianhu %><br />
+    <%= f.label :lianxi_dianhu,'联系电话' %>
     <%= f.text_field :lianxi_dianhu %>
   </div>
   <div class="field">
-    <%= f.label :lianxi_ren %><br />
+    <%= f.label :lianxi_ren,'联系人' %>
     <%= f.text_field :lianxi_ren %>
   </div>
   <div class="field">
-    <%= f.label :shuaxin_cishu %><br />
+    <%= f.label :shuaxin_cishu %>
     <%= f.number_field :shuaxin_cishu %>
   </div>
   <div class="field">
-    <%= f.label :shifou_zhiding %><br />
+    <%= f.label :shifou_zhiding %>
     <%= f.check_box :shifou_zhiding %>
   </div>
   <div class="field">
-    <%= f.label :shifou_dingxiang %><br />
+    <%= f.label :shifou_dingxiang %>
     <%= f.check_box :shifou_dingxiang %>
   </div>
   <div class="field">
-    <%= f.label :shifou_tuiguang %><br />
+    <%= f.label :shifou_tuiguang %>
     <%= f.check_box :shifou_tuiguang %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit '提交' %>
   </div>
 <% end %>
