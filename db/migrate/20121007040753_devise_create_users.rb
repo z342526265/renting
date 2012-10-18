@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string :authentication_token
 
 
+      t.integer :cate,:default=>0
       t.timestamps
     end
 

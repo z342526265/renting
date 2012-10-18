@@ -5,7 +5,7 @@ class House < ActiveRecord::Base
 
 
 
-
+belongs_to :user
 
   LEIXING = []
   CHAOXIANG = [['东',0],['南',1],['西',2],['北',3],['其他',4]]
@@ -14,5 +14,14 @@ class House < ActiveRecord::Base
   LEIXING = [['民房',0],['单元房',1]]
   ZHUANGXIU = [['简装修',0],['精装修',1],['毛坯房',2]]
   
+  def user_cate
+    self.user.try :cate
+  end
+
+  def user_cate=(cate)
+    self.user.cate = cate
+  end
+
 end
+
 

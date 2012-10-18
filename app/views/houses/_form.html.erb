@@ -1,24 +1,14 @@
 <%= form_for(@house) do |f| %>
-  <% if @house.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@house.errors.count, "error") %> prohibited this house from being saved:</h2>
-
-      <ul>
-      <% @house.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
-    <%= f.label :user_id,'用户' %>
-    <%= f.number_field :user_id %>
+    <%= f.label :user_cate,'我是' %>
+
+    个人出租者 <%= f.radio_button :user_cate,1 %>|
+    房屋中介<%= f.radio_button :user_cate,2 %>
   </div>
   <div class="field">
     <%= f.label :chuzu_fangshi,'出租方式' %>
-    <%= f.radio_button :chuzu_fangshi,1 %>
-    <%= f.radio_button :chuzu_fangshi,2 %>
+    整体出租<%= f.radio_button :chuzu_fangshi,1 %>|
+    合租<%= f.radio_button :chuzu_fangshi,2 %>
   </div>
   <div class="field">
     <%= f.label :biaoti,'标题' %>
@@ -33,52 +23,42 @@
     <%= f.text_field :xiaoqu %>
   </div>
   <div class="field">
-    <%= f.label :woshi,'室' %>
-    <%= f.number_field :woshi %>
+    <%= f.number_field :woshi,class:'_20px' %>
+    <%= f.label :woshi,'室' -%>
+    <%= f.number_field :keting -%>
+    <%= f.label :keting,'厅' -%>
+    <%= f.number_field :chufang -%>
+    <%= f.label :chufang,'厨' -%>
+    <%= f.number_field :weishengjian -%>
+    <%= f.label :weishengjian,'卫' %>
   </div>
   <div class="field">
-    <%= f.label :keting %>
-    <%= f.number_field :keting %>
-  </div>
-  <div class="field">
-    <%= f.label :chufang %>
-    <%= f.number_field :chufang %>
-  </div>
-  <div class="field">
-    <%= f.label :weishengjian %>
-    <%= f.number_field :weishengjian %>
-  </div>
-  <div class="field">
-    <%= f.label :leixing %>
+    <%= f.label :leixing,'房屋类型' %>
     <%= f.select :leixing,House::LEIXING %>
   </div>
   <div class="field">
-    <%= f.label :zhuangxiu %>
+    <%= f.label :zhuangxiu,'装修情况' %>
     <%= f.select :zhuangxiu,House::ZHUANGXIU %>
   </div>
   <div class="field">
-    <%= f.label :louceng %>
-    <%= f.number_field :louceng %>
+    <%= f.label :zongcengshu,'总' -%>
+    <%= f.number_field :zongcengshu %>层
+    第<%= f.number_field :louceng %>
+    <%= f.label :louceng,'层' %>
   </div>
   <div class="field">
-    <%= f.label :zongcengshu %>
-    <%= f.number_field :zongcengshu %>
-  </div>
-  <div class="field">
-    <%= f.label :chaoxiang %>
+    <%= f.label :chaoxiang,'房屋朝向' %>
     <%= f.select :chaoxiang,House::CHAOXIANG %>
   </div>
   <div class="field">
-    <%= f.label :mianji %>
+    <%= f.label :mianji,'面积' %>
     <%= f.number_field :mianji %>
   </div>
   <div class="field">
-    <%= f.label :zujin,'租金' %>
-    <%= f.number_field :zujin %>
-  </div>
-  <div class="field">
-    <%= f.label :fu_zujin_fangshi,'付租金方式' %>
-    <%= f.select :fu_zujin_fangshi,House::FU_ZUJIN_FANGSHI %>
+    <%= f.label :zujin,'租金' -%>
+    <%= f.number_field :zujin -%>
+    <%= f.label :fu_zujin_fangshi,'付租金方式' -%>
+    <%= f.select :fu_zujin_fangshi,House::FU_ZUJIN_FANGSHI -%>
   </div>
   <div class="field">
     <%= f.label :fangwu_peizhi,'房屋配置' %>
