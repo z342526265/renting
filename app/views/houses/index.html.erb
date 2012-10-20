@@ -1,69 +1,24 @@
 <h1>Listing houses</h1>
 
 <table>
-  <tr>
-    <th>User</th>
-    <th>Chuzu fangshi</th>
-    <th>Biaoti</th>
-    <th>Dizhi</th>
-    <th>Xiaoqu</th>
-    <th>Woshi</th>
-    <th>Keting</th>
-    <th>Chufang</th>
-    <th>Weishengjian</th>
-    <th>Leixing</th>
-    <th>Zhuangxiu</th>
-    <th>Louceng</th>
-    <th>Zongcengshu</th>
-    <th>Chaoxiang</th>
-    <th>Mianji</th>
-    <th>Zujin</th>
-    <th>Fu zujin fangshi</th>
-    <th>Fangwu peizhi</th>
-    <th>Miaoshu</th>
-    <th>Image url</th>
-    <th>Lianxi dianhu</th>
-    <th>Lianxi ren</th>
-    <th>Shuaxin cishu</th>
-    <th>Shifou zhiding</th>
-    <th>Shifou dingxiang</th>
-    <th>Shifou tuiguang</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @houses.each do |house| %>
   <tr>
-    <td><%= house.user_id %></td>
-    <td><%= house.chuzu_fangshi %></td>
-    <td><%= house.biaoti %></td>
-    <td><%= house.dizhi %></td>
-    <td><%= house.xiaoqu %></td>
-    <td><%= house.woshi %></td>
-    <td><%= house.keting %></td>
-    <td><%= house.chufang %></td>
-    <td><%= house.weishengjian %></td>
-    <td><%= house.leixing %></td>
-    <td><%= house.zhuangxiu %></td>
-    <td><%= house.louceng %></td>
-    <td><%= house.zongcengshu %></td>
-    <td><%= house.chaoxiang %></td>
-    <td><%= house.mianji %></td>
-    <td><%= house.zujin %></td>
-    <td><%= house.fu_zujin_fangshi %></td>
-    <td><%= house.fangwu_peizhi %></td>
-    <td><%= house.miaoshu %></td>
-    <td><%= house.image_url %></td>
-    <td><%= house.lianxi_dianhu %></td>
-    <td><%= house.lianxi_ren %></td>
-    <td><%= house.shuaxin_cishu %></td>
-    <td><%= house.shifou_zhiding %></td>
-    <td><%= house.shifou_dingxiang %></td>
-    <td><%= house.shifou_tuiguang %></td>
-    <td><%= link_to 'Show', house %></td>
-    <td><%= link_to 'Edit', edit_house_path(house) %></td>
-    <td><%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td>
+      <%=link_to house.biaoti,house %>
+      <span>
+        <%= house.quyu_text %>
+      </span>
+      <span>
+        <%= house.xiaoqu %>
+      </span>
+      <span>
+        <%= "(#{house.cate_text})" %>
+      </span>
+    </td>
+    <td><%= house.huxing%></td>
+    <td><%= house.zujin %>元/月</td>
+    <td><%= house.updated_at %></td>
   </tr>
 <% end %>
 </table>

@@ -1,7 +1,11 @@
+# encoding: utf-8
 class HousesController < ApplicationController
+  before_filter :authenticate_user!,:only=>[:new,:create,:edit,:update,:destroy]
+
   # GET /houses
   # GET /houses.json
   def index
+
     @houses = House.all
 
     respond_to do |format|
@@ -24,7 +28,7 @@ class HousesController < ApplicationController
   # GET /houses/new
   # GET /houses/new.json
   def new
-    @house = House.new
+    @house = current_user.houses.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +44,16 @@ class HousesController < ApplicationController
   # POST /houses
   # POST /houses.json
   def create
-    @house = House.new(params[:house])
+    p params
+     p params[:house]
 
+    @house = current_user.houses.build(params[:house])
+
+    p @house
+    p '9999999'
     respond_to do |format|
       if @house.save
-        format.html { redirect_to @house, notice: 'House was successfully created.' }
+        format.html { redirect_to @house, notice: '出租信息发布成功！' }
         format.json { render json: @house, status: :created, location: @house }
       else
         format.html { render action: "new" }
@@ -60,7 +69,7 @@ class HousesController < ApplicationController
 
     respond_to do |format|
       if @house.update_attributes(params[:house])
-        format.html { redirect_to @house, notice: 'House was successfully updated.' }
+        format.html { redirect_to @house, notice: '信息已经更新！' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

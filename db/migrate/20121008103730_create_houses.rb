@@ -2,14 +2,18 @@ class CreateHouses < ActiveRecord::Migration
   def change
     create_table :houses do |t|
       t.integer :user_id,:limit=>6
+
+      t.integer :quyu_num,:limit=>1  #区域编号
+      t.integer :cate_num,:limit=>1  #发布者身份 0个人 1经纪人
+
       t.integer :chuzu_fangshi,:limit=>1
       t.string :biaoti
       t.string :dizhi
       t.string :xiaoqu
-      t.integer :woshi,:limit=>1
-      t.integer :keting,:limit=>1
-      t.integer :chufang,:limit=>1
-      t.integer :weishengjian,:limit=>1
+      t.integer :woshi,:limit=>1,default:0
+      t.integer :keting,:limit=>1,default:0
+      t.integer :chufang,:limit=>1,default:0
+      t.integer :weishengjian,:limit=>1,default:0
       t.integer :leixing,:limit=>1
       t.integer :zhuangxiu,:limit=>1
       t.integer :louceng,:limit=>1
