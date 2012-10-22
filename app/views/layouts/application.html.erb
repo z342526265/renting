@@ -1,34 +1,49 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>南阳租房发布</title>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="Keywords" content="南阳租房" />
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div id="container">
-      <div id="header">
-        <h1>南阳租房信息网</h1>
-        <%#= image_tag("rails.png") %>
-      </div>
-      <div id="menu">
-        <%= link_to "首页",root_path %>
-        <%= link_to "租房信息",houses_path %>
-        <%= link_to "租客与房东" %>
-      </div>
-      <div id="flash">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-      </div>
-      <div id="main_content">
-        <%= yield %>
-      </div>
-      <div id="footer">
-        我是底部
-      </div>
-    </div>
+<head>
+  <title>南阳租房发布</title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <meta name="Keywords" content="南阳租房" />
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+    <h1>南阳租房信息网</h1>
+    <%#= image_tag("rails.png") %>
+
+  </div>
+  <div id="menu">
+      <%= link_to "首页",root_path %>
+      <%= link_to "租房信息",houses_path %>
+      <%= link_to "租客与房东" %>
+      <% if user_signed_in? %>
+          <%= link_to "登出",destroy_user_session_path,method:"delete" %>
+      <% else %>
+          <%= link_to "登陆",new_user_session_path %>
+      <% end %>
+  </div>
+  <div id="user_nav">
+    <% if user_signed_in? %>
+        当前是 <%= current_user.email %> 登陆 。 准备退出?
+        <%= link_to '退出', destroy_user_session_path,method:"delete" %>
+    <% else %>
+        欢迎访问南阳租房网，请 <%= link_to '登陆', new_user_session_path %> 或 <%= link_to '注册', new_user_registration_path %>
+    <% end %>
+  </div>
+
+  <div id="flash">
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+  <div id="main_content">
+    <%= yield %>
+  </div>
+  <div id="footer">
+    我是底部
+  </div>
+</div>
 </body>
 </html>

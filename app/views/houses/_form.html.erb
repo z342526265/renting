@@ -2,10 +2,10 @@
       <table>
         <tr>
           <td><%= xinghao %></td>
-          <td><%= f.label :chuzu_fangshi,'我是:' %></td>
+          <td><%= f.label :cate_num,'我是:' %></td>
           <td>
             <% House::CATE_NUM.each do |name,val| %>
-                <%= f.radio_button :chuzu_fangshi,val %><%= name %>
+                <%= f.radio_button :cate_num,val %><%= name %>
             <% end %>
           </td>
         </tr>

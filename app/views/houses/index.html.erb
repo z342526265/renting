@@ -1,4 +1,7 @@
-<h1>Listing houses</h1>
+<h1>出租信息</h1>
+<ul>
+  <li><%= link_to '全部', %></li>
+</ul>
 
 <table>
 
@@ -7,7 +10,7 @@
     <td>
       <%=link_to house.biaoti,house %>
       <span>
-        <%= house.quyu_text %>
+        <%= house.quyu_text %>-
       </span>
       <span>
         <%= house.xiaoqu %>

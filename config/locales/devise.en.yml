@@ -4,7 +4,7 @@ en:
   errors:
     messages:
       expired: "has expired, please request a new one"
-      not_found: "not found"
+      not_found: "不存在！"
       already_confirmed: "was already confirmed, please try signing in"
       not_locked: "was not locked"
       not_saved:
@@ -13,7 +13,7 @@ en:
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
+      already_authenticated: '已经成功登陆！.'
       unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: 'You have to confirm your account before continuing.'
       locked: 'Your account is locked.'
@@ -22,8 +22,8 @@ en:
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: '成功登陆！.'
+      signed_out: '成功退出！.'
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'

@@ -68,6 +68,13 @@ belongs_to :user
     return txt
   end
 
+
+  before_create :set_published_at
+
+  def set_published_at
+    self.published_at = Time.now
+  end
+
 end
 
 
