@@ -43,9 +43,14 @@ ActiveRecord::Schema.define(:version => 20121022063349) do
     t.boolean  "shifou_dingxiang"
     t.boolean  "shifou_tuiguang"
     t.datetime "published_at"
+    t.string   "ruzhu"
+    t.string   "craw_url"
+    t.string   "img_url"
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
   end
+
+  add_index "houses", ["user_id"], :name => "index_houses_on_user_id"
 
   create_table "sessions", :force => true do |t|
     t.string   "session_id", :null => false

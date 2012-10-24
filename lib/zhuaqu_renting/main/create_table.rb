@@ -1,6 +1,6 @@
-class CreateHouses < ActiveRecord::Migration
+class CreateTable < ActiveRecord::Migration
   def change
-    create_table :houses do |t|
+    create_table :craw_houses do |t|
       t.integer :user_id,:limit=>6
 
       t.integer :quyu_num,:limit=>1,default:0  #区域编号
@@ -34,16 +34,11 @@ class CreateHouses < ActiveRecord::Migration
 
       t.datetime :published_at  #发布时间
 
-      t.string :ruzhu   #入住时间
+      t.string :craw_url
 
-      t.string :craw_url   #抓取的详情页面url地址
-      t.string :img_url   #抓取的详情的电话的图片的url地址
-
+      t.string :image_url
 
       t.timestamps
     end
-
-    add_index :houses,:user_id
-
   end
 end

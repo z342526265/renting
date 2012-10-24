@@ -6,7 +6,7 @@ class HousesController < ApplicationController
   # GET /houses.json
   def index
 
-    @houses = House.all
+    @houses = House.page(params[:page]).per(House::PER_PAGE_COUNT)
 
     respond_to do |format|
       format.html # index.html.erb
