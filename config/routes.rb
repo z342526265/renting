@@ -1,12 +1,17 @@
 Renting::Application.routes.draw do
   resources :houses
 
+  namespace :admin do
+    # Directs /admin/products/* to Admin::ProductsController
+    # (app/controllers/admin/products_controller.rb)
+    resources :houses do
+      member do
+        get "price_images"
+      end
+    end
+  end
+
   devise_for :users#,:skip=>[:sessions]
-  #as :user do
-  #  get 'signin' => 'devise/sessions#new', :as => :new_user_session
-  #  post 'signin' => 'devise/sessions#create', :as => :user_session
-  #  delete 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
-  #end
 
   get "welcome/index"
 
@@ -54,7 +59,7 @@ Renting::Application.routes.draw do
   #   namespace :admin do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
+  #     resources :houses
   #   end
 
   # You can have the root of your site routed with "root"
@@ -65,5 +70,5 @@ Renting::Application.routes.draw do
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
+  match ':controller(/:action(/:id))(.:format)'
 end

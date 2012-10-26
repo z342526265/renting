@@ -1,62 +1,13 @@
 # encoding: utf-8
-class HousesController < ApplicationController
+class Admin::HousesController < Admin::Application
+
   before_filter :authenticate_user!,:only=>[:new,:create,:edit,:update,:destroy]
 
   # GET /houses
   # GET /houses.json
   def index
 
-    session["conditions"] ||= {}
-
-    if params["s"]
-      session["conditions"].delete(params["s"])
-    else
-      new_conditions = params.delete_if{|key,val| ["controller","action","s"].include?(key)}
-      session["conditions"].update new_conditions
-    end
-
-    @houses = House.where("lianxi_dianhu is not ?",nil)
-
-    #区域条件
-    quyu = session["conditions"]["quyu"]
-    if quyu
-      @houses = @houses.where("quyu_num = ?",quyu)
-    end
-
-    #租金条件
-    zujin = session[:conditions]["zujin"]
-    if zujin.present?
-      zujin = zujin.to_i
-      zujin_cate = House::ZUJIN_CATE
-      txt = zujin_cate[zujin]
-      if zujin == 0
-        @houses = @houses.where("zujin <= ?",txt[/\d+/])
-      elsif zujin + 1 == zujin_cate.length
-        @houses = @houses.where("zujin > ?",txt[/\d+/])
-      else
-        a = /(\d+)-(\d+)元/.match txt
-        @houses = @houses.where("zujin between ? and ?",a[1],a[2])
-      end
-    end
-
-    #厅室数量条件
-    tingshi = session["conditions"]["keting"]
-    if tingshi
-      tingshi = tingshi.to_i
-      if tingshi + 1 == House::TINGSHI.length
-        @houses = @houses.where("woshi > ?",tingshi)
-      else
-        @houses = @houses.where("woshi = ?",tingshi + 1)
-      end
-    end
-
-    #出租方式条件
-    fangshi = session["conditions"]["fangshi"]
-    if fangshi
-      @houses = @houses.where("chuzu_fangshi = ?",fangshi)
-    end
-
-    @houses = @houses.page(params[:page]).per(House::PER_PAGE_COUNT).order(:published_at)
+    @houses = House.page(params[:page]).per(House::PER_PAGE_COUNT)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -135,4 +86,10 @@ class HousesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def price_images
+    @houses = House.where("zujin = ?",nil)
+  end
+
+
 end

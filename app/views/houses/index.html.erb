@@ -1,15 +1,48 @@
 <h1>出租信息</h1>
 <ul>
-  <li><%= link_to '全部' %></li>
+  <li>
+    区域：
+    <%= link_to "全部",{action:"index",s:"quyu"} %>
+    <% House::QUYU_NUM.each do |txt,i| %>
+        <%= link_to txt,{action:"index",quyu:i} %>
+    <% end %>
+  </li>
+  <li>
+    租金：
+    <%= link_to "不限",{action:"index",s:"zujin"} %>
+    <% House::ZUJIN_CATE.each_with_index do |txt,i| %>
+        <%= link_to txt,{action:"index",zujin:i} %>
+    <% end %>
+  </li>
+  <li>
+    厅室：
+    <%= link_to "不限",{action:"index",s:"keting"} %>
+    <% House::TINGSHI.each_with_index do |txt,i| %>
+        <%= link_to txt,{action:"index",keting:i} %>
+    <% end %>
+  </li>
+  <li>
+    方式：
+    <%= link_to "不限",{action:"index",s:"fangshi"} %>
+    <% House::CHUZU_FANGSHI.each do |txt,i| %>
+        <%= link_to txt,{action:"index",fangshi:i} %>
+    <% end %>
+  </li>
+  <li>
+    已选条件：
+    <% session["conditions"].each do |key,val| %>
+        <%= link_to selected_txt(key,val),{action:"index",s:key},{title:"取消"} %>
+    <% end %>
+  </li>
 </ul>
 
 <table>
 
-<% @houses.each do |house| %>
-  <tr>
-    <td>
-      <%=link_to house.biaoti,house %>
-      <span>
+  <% @houses.each do |house| %>
+      <tr>
+        <td>
+          <%=link_to house.biaoti,house %>
+          <span>
         <%= house.quyu_text %>-
       </span>
       <span>
@@ -18,12 +51,12 @@
       <span>
         <%= "(#{house.cate_text})" %>
       </span>
-    </td>
-    <td><%= house.huxing%></td>
-    <td><%= house.zujin %>元/月</td>
-    <td><%= house.updated_at %></td>
-  </tr>
-<% end %>
+        </td>
+        <td><%= house.huxing%></td>
+        <td><%= house.zujin %>元/月</td>
+        <td><%= house.updated_at %></td>
+      </tr>
+  <% end %>
 </table>
 
 <%= paginate(@houses) %>

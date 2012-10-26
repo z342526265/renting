@@ -30,7 +30,8 @@ belongs_to :user
   CHAOXIANG = Array.new(CHAOXIANG_58.length){|i|[CHAOXIANG_58[i],i]}
 
 
-  CHUZU_FANGSHI = [['整租',0],['合租',1]]
+  CHUZU_FANGSHI_58 = ['整租','合租']
+  CHUZU_FANGSHI = Array.new(CHUZU_FANGSHI_58.length){|i|[CHUZU_FANGSHI_58[i],i]}
 
   #58同城的付租金方式
   FU_ZUJIN_FANGSHI_58 = %w(面议 押一付三 押一付一 押二付一 半年付 年付)
@@ -48,8 +49,16 @@ belongs_to :user
   QUYU_NUM_58 = %w(卧龙 宛城 邓州 南召 方城 西峡 镇平 内乡 淅川 社旗 唐河 新野 桐柏 油田 其他)
   QUYU_NUM = Array.new(QUYU_NUM_58.length){|i|[QUYU_NUM_58[i],i]}
 
+  ZUJIN_CATE = %w(200以下 200-400元 400-600元 600-800元 800-1000元 1000-1500元 1500-2000元 2000-2500元 2500-3000元 3000以上)
+
+  TINGSHI = %w(一室 二室 三室 四室 四室以上)
+
   #每页数量
   PER_PAGE_COUNT = 30
+
+  #def quyu_txt
+  #
+  #end
 
   #
   #QUYU_NUM = [
