@@ -1,135 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>User:</b>
-  <%= @house.user_id %>
+<h1><%= @house.biaoti %></h1>
 </p>
 
 <p>
-  <b>Chuzu fangshi:</b>
-  <%= @house.chuzu_fangshi %>
+  <b>户型面积：</b>
+  <%= @house.mianji %>平米 - <%= @house.huxing %>
 </p>
 
 <p>
-  <b>Biaoti:</b>
-  <%= @house.biaoti %>
+  <b>房屋类型：</b>
+  <%= @house.leixing_text %> - <%= @house.louceng_text %>
 </p>
 
 <p>
-  <b>Dizhi:</b>
+  <b>装修情况：</b>
+  <%= @house.chaoxiang_text %> - <%= @house.zhuangxiu_text %>
+</p>
+
+<p>
+  <b>出租方式：</b>
+   <%= @house.chuzu_fangshi_text %> - 每月租金<%= @house.zujin %>元 - <%= @house.fu_zujin_fangshi_text %>
+</p>
+
+<p>
+  <b>房屋位置：</b>
+  <%= @house.quyu_text %> - <%= @house.xiaoqu %>
+</p>
+
+<p>
+  <b>具体地址：</b>
   <%= @house.dizhi %>
 </p>
 
 <p>
-  <b>Xiaoqu:</b>
-  <%= @house.xiaoqu %>
-</p>
-
-<p>
-  <b>Woshi:</b>
-  <%= @house.woshi %>
-</p>
-
-<p>
-  <b>Keting:</b>
-  <%= @house.keting %>
-</p>
-
-<p>
-  <b>Chufang:</b>
-  <%= @house.chufang %>
-</p>
-
-<p>
-  <b>Weishengjian:</b>
-  <%= @house.weishengjian %>
-</p>
-
-<p>
-  <b>Leixing:</b>
-  <%= @house.leixing %>
-</p>
-
-<p>
-  <b>Zhuangxiu:</b>
-  <%= @house.zhuangxiu %>
-</p>
-
-<p>
-  <b>Louceng:</b>
-  <%= @house.louceng %>
-</p>
-
-<p>
-  <b>Zongcengshu:</b>
-  <%= @house.zongcengshu %>
-</p>
-
-<p>
-  <b>Chaoxiang:</b>
-  <%= @house.chaoxiang %>
-</p>
-
-<p>
-  <b>Mianji:</b>
-  <%= @house.mianji %>
-</p>
-
-<p>
-  <b>Zujin:</b>
-  <%= @house.zujin %>
-</p>
-
-<p>
-  <b>Fu zujin fangshi:</b>
-  <%= @house.fu_zujin_fangshi %>
-</p>
-
-<p>
-  <b>Fangwu peizhi:</b>
-  <%= @house.fangwu_peizhi %>
-</p>
-
-<p>
-  <b>Miaoshu:</b>
+  <b>房东备注：</b>
   <%= @house.miaoshu %>
 </p>
 
 <p>
-  <b>Image url:</b>
-  <%= @house.image_url %>
-</p>
-
-<p>
-  <b>Lianxi dianhu:</b>
-  <%= @house.lianxi_dianhu %>
-</p>
-
-<p>
-  <b>Lianxi ren:</b>
-  <%= @house.lianxi_ren %>
-</p>
-
-<p>
-  <b>Shuaxin cishu:</b>
-  <%= @house.shuaxin_cishu %>
-</p>
-
-<p>
-  <b>Shifou zhiding:</b>
-  <%= @house.shifou_zhiding %>
-</p>
-
-<p>
-  <b>Shifou dingxiang:</b>
-  <%= @house.shifou_dingxiang %>
-</p>
-
-<p>
-  <b>Shifou tuiguang:</b>
-  <%= @house.shifou_tuiguang %>
+  <b>联系人：</b>
+  <%= @house.lianxi_ren %> - <%= @house.lianxi_dianhu %>
 </p>
 
 
-<%= link_to 'Edit', edit_house_path(@house) %> |
-<%= link_to 'Back', houses_path %>

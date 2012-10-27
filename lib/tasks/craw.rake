@@ -42,7 +42,17 @@ namespace :craw do
       img_url = new_page.search("span#t_phone img").attr("src").value rescue nil
       p img_url
 
-      p "9999998888"
+      lianxi_ren = new_page.search("li.ico_user a").text
+      p new_page.search("ul li#movebar_info").text
+      p new_page.search("a").text
+      p new_page.search("ul.userinfo")
+      p new_page.search("li.ico_user")
+      new_page.search("li.ico_user a")
+      p lianxi_ren
+
+      attrs[:lianxi_ren] = lianxi_ren
+
+      p "dddddddddddddddddddddddddddddddddddddddddddddddddddd"
       miaoshu = new_page.search("div.maincon").text.gsub(/\s/,"")
       p miaoshu
       attrs[:biaoti] = biaoti

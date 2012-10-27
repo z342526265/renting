@@ -54,7 +54,7 @@
         </td>
         <td><%= house.huxing%></td>
         <td><%= house.zujin %>元/月</td>
-        <td><%= house.updated_at %></td>
+        <td><%=published_time_text house.updated_at %></td>
       </tr>
   <% end %>
 </table>

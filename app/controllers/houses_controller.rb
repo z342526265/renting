@@ -56,7 +56,7 @@ class HousesController < ApplicationController
       @houses = @houses.where("chuzu_fangshi = ?",fangshi)
     end
 
-    @houses = @houses.page(params[:page]).per(House::PER_PAGE_COUNT).order(:published_at)
+    @houses = @houses.page(params[:page]).per(House::PER_PAGE_COUNT).order("updated_at desc")
 
     respond_to do |format|
       format.html # index.html.erb

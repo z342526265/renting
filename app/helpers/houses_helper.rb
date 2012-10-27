@@ -18,6 +18,23 @@ module HousesHelper
   end
 
 
+  #显示更新时间
+  def published_time_text(time)
+    h = Time.now - time.to_time
+    if h < 6.hours
+      return "6小时以内"
+    elsif h < 12.hours
+      return "12小时以内"
+    elsif h < 24.hours
+      return "24小时以内"
+    elsif h < 48.hours
+      return "48小时以内"
+    elsif h < 72.hours
+      return "72小时以内"
+    else
+      return "超过三天"
+    end
+  end
 
 
 end

@@ -111,6 +111,30 @@ belongs_to :user
     return txt
   end
 
+  def leixing_text
+    LEIXING_58[self.leixing]
+  end
+
+  def chaoxiang_text
+    CHAOXIANG_58[self.chaoxiang]
+  end
+
+  def zhuangxiu_text
+    ZHUANGXIU_58[self.zhuangxiu]
+  end
+
+  def chuzu_fangshi_text
+    CHUZU_FANGSHI_58[self.chuzu_fangshi]
+  end
+
+  def fu_zujin_fangshi_text
+    "付租金方式" + FU_ZUJIN_FANGSHI_58[self.fu_zujin_fangshi]
+  end
+
+  def louceng_text
+    "共 #{self.zongcengshu} 层，房屋在第 #{self.louceng} 层"
+  end
+
 
   before_create :set_published_at
 

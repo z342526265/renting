@@ -6,4 +6,7 @@ module ApplicationHelper
     content_tag(:b,"※",:style=>"color:red")
   end
 
+
+
+
 end
